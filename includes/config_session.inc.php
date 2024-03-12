@@ -13,6 +13,7 @@ session_set_cookie_params([
 session_start();
 
 if(isset($_SESSION['user_id'])){
+    regenerate_session_id_loggedin();
 }else{
     if(!isset($_SESSION['last_regeneration'])){
         //El condicional es en caso que sea la primera vez que se ingresa a la sesion
@@ -30,6 +31,10 @@ if(isset($_SESSION['user_id'])){
 
 function regenerate_session_id_loggedin(){
     session_regenerate_id(true);//regenera la sesion, dandole un Id distinto, como que lo mejora en pocas palabras
+    $userId = $_SESSION['user_id'];
+    $newSessionId = session_create_id();
+    $sessionId = $newSessionId ."_". $userId["id"];
+    session_id($sessionId);
     $_SESSION['last_regeneration'] = time(); //le da el 
 }
 
