@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="Style2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Alatsi' rel='stylesheet'>
 </head>
 <body>
     <div class="container">
@@ -24,13 +24,14 @@
             <button>Login</button>
         </form>
 
-        <h3>Signup</h3>
+
+        <h3>Sign Up</h3>
 
         <form action="includes/signup.inc.php" method="post">
         <?php
         signup_input();
         ?>
-            <button>Signup</button>
+            <button>Sign Up</button>
         </form>
 
         <?php
