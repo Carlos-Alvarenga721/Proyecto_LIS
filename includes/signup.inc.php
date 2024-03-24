@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
         
         header("Location: ../index.php?signup=success");
 
-        //luego de terminar el registro o los errores, cerramos la conexion con la BD y las statements
+        //luego de terminar el registro o los errores, cerramos la conexion con la BD y las statements, aunque se cierran automaticamente es buena practica hacerlo asi.
         $pdo = null; 
         $stmt = null;
         die();

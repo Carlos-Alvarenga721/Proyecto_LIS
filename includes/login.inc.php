@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
 
         //aqui a diferencia del signup, le quitamos la sesion y no guardamos nada que el usuario escribio en los input, porque en el caso de cuando se quiere logear es mejor que aunque sea tedioso, si el usuario deba reescribir todo de nuevo.
         if($errors){
-            $_SESSION["errors_signup"] = $errors; 
+            $_SESSION["errors_login"] = $errors; 
 
             header("Location: ../index.php"); //regresamos al usuario al login
             die(); //detenemos la ejecucion del codigo
@@ -41,6 +41,17 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
         $newSessionId = session_create_id();
         $sessionId = $newSessionId ."_". $results["id"];
         session_id($sessionId);
+
+        $_SESSION['user_id'] = $result["id"];
+        $_SESSION['user_username'] = htmlspecialchars($result["username"]); //hago esto en caso de que el nombre del username lo quiera mostrar en alguna parte de la pagina entonces sanetizo lo que sea que el username sea. no lo hago con el ID porque no es algo que yo imprima en pantalla como tal
+       
+        $_SESSION['last_regeneration'] = time();
+
+        header("Location: ../index.php?login=success");
+
+        $pdo = null; 
+        $stmt = null;
+        die();
     } 
     catch (PDOException $e) {
         die("Query Failed". $e->getMessage());
@@ -50,3 +61,4 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
     header("Location: ../index.php");
     die();
 }
+
