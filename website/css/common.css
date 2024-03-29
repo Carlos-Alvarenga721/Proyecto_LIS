@@ -1,3 +1,8 @@
+:root{
+  --teal: #2ec1ac;
+  --teal_hover: #279e8c; 
+}
+
 .merienda-<uniquifier> {
   font-family: "Merienda", cursive;
   font-optical-sizing: auto;
@@ -45,12 +50,21 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+/*Lo del var es para guardar el color en una variable en caso el programador no queira recordarlo*/
 .custom-bg{
-	background-color: #2ec1ac;
-	border: 1px solid #2ec1ac;
+	background-color: var(--teal);
+	border: 1px solid var(--teal);
 }
 
 .custom-bg:hover{
-	background-color: #279e8c;
-	border-color: #279e8c;
+	background-color: var(--teal_hover);
+	border-color: var(--teal_hover);
+}
+
+/*esta es parte de la pagina Facilities.php*/
+
+.h-line{
+  width: 150px;
+  margin: 0 auto;
+  height: 1.7px;
 }
