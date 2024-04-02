@@ -16,10 +16,10 @@
 			<a class="nav-link" href="facilities.php">Facilities</a>
 		</li>
 		<li class="nav-item me-2">
-			<a class="nav-link" href="#">Contact us</a>
+			<a class="nav-link" href="contact.php">Contact us</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">About</a>
+			<a class="nav-link" href="about.php">About</a>
 		</li>
 		</ul>
 		<div class="d-flex" role="search">
