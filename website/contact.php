@@ -6,13 +6,6 @@
 	<title>Hotel - Contact</title>	
 
 	<?php require('inc/links.php');?>
-	<style>
-		.pop:hover{
-			border-top-color: var(--teal) !important;
-			transform: scale(1.03);
-			transition: all 0.3s ;
-		}
-	</style>
 </head>
 <body class="bg-light">
 	<!--Mando a llamar al archivo header-->
@@ -67,6 +60,26 @@
 				<div class="bg-white rounded shadow p-4">
 					<form action="">
 						<h5>Send a Message</h5>
+						<div class="mt-3">
+						<label class="form-label" style="font-weight: 500;">Name</label>
+						<input type="text" class="form-control shadow-none">
+						</div>
+
+						<div class="mt-3">
+						<label class="form-label" style="font-weight: 500;">Email</label>
+						<input type="email" class="form-control shadow-none">
+						</div>
+
+						<div class="mt-3">
+						<label class="form-label" style="font-weight: 500;">Subject</label>
+						<input type="text" class="form-control shadow-none">
+						</div>
+
+						<div class="mt-3">
+						<label class="form-label" style="font-weight: 500;">Message</label>
+						<textarea class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
+						</div>
+					<button type="submit" class="btn text-white custom-bg mt-3">SEND</button>
 					</form>
 				</div>
 			</div>
