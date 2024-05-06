@@ -1,0 +1,76 @@
+:root{
+  --teal: #2ec1ac;
+  --teal_hover: #279e8c; 
+}
+
+.merienda-<uniquifier> {
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+*{
+	font-family: "Poppins", sans-serif;
+}
+
+.h-font{
+	font-family: "Merienda", cursive;
+}
+
+/* Ocultar las flechas del input number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/*Lo del var es para guardar el color en una variable en caso el programador no queira recordarlo*/
+.custom-bg{
+	background-color: var(--teal);
+	border: 1px solid var(--teal);
+}
+
+.custom-bg:hover{
+	background-color: var(--teal_hover);
+	border-color: var(--teal_hover);
+}
+
+/*esta es parte de la pagina Facilities.php*/
+
+.h-line{
+  width: 150px;
+  margin: 0 auto;
+  height: 1.7px;
+}
+
+.custom-alert{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+}
