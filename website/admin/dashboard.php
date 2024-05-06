@@ -12,11 +12,18 @@ session_regenerate_id(true);
     <title>Admin Panel - Dashboard</title>
     <?php require('inc/links.php');?>
 </head>
-<body class="bg-secondary">
-    
-    <div class="container-fluid bg-dark text-light p-3 d-flex align-items-center justify-content-between">
-    <h3 class="mb-0">ADMIN PANEL</h3>
-    <a href="logout.php" class="btn btn-light btn-sm">LOG OUT</a>
+<body class="bg-light">
+
+
+    <?php require('inc/headerAdmin.php'); ?>
+
+
+    <div class="container-fluid" id="main-content">
+        <div class="row">
+            <div class="col-lg-10 ms-auto p-4 overflow-hidden">
+                Loren ipsum
+            </div>
+        </div>
     </div>
 
     <?php require('inc/scripts.php');?>
