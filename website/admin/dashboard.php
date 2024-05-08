@@ -15,8 +15,7 @@ session_regenerate_id(true);
 <body class="bg-light">
 
 
-    <?php require('inc/headerAdmin.php'); ?>
-
+    <?php require('inc/header.php'); ?>
 
     <div class="container-fluid" id="main-content">
         <div class="row">
