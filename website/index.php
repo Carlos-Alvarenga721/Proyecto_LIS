@@ -25,7 +25,52 @@
 				margin-left: -1rem;	
 			}
 		}
+
+		.modal {
+            display: none; /* Initially hidden */
+            position: fixed; /* Stay in place */
+            z-index:2; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if content overflows */
+            background-color: rgba(0,0,0,0.4); /* Transparent black background */
+        }
+
+        /* Modal content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from top and centered horizontally */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Reasonable width */
+        }
+
+        /* Close button */
+        .close {
+            color: #fff;
+            float: right;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Modal content with success or error class (optional) */
+        .modal-content.success {
+            border-color: green;
+        }
+
+        .modal-content.error {
+            border-color: red;
+        }
 	</style>
+
 </head>
 <body class="bg-light">
 	<!--Mando a llamar al archivo header-->
@@ -63,36 +108,37 @@
 		<div class="row">
 			<div class="col-lg-12 bg-white shadow p-4 rounded">
 				<h5 class="mb-4">Check Booking Availability</h5>
-				<form>
+
+				<!-- processReservation.php para almacenar la reservacion en la base de datos -->
+				<form action="processReservation.php" method="post">
 					<div class="row align-items-end">
 						<div class="col-lg-3 mb-3">
 							<label class="form-label" style="font-weight: 500;">Check-in</label>
-					    	<input type="date" class="form-control shadow-none">
+					    	<input type="date" class="form-control shadow-none" name="check_in" id="check_in" min="<?php echo date('Y-m-d'); ?>">
 						</div>
 						<div class="col-lg-3 mb-3">
 							<label class="form-label" style="font-weight: 500;">Check-out</label>
-					    	<input type="date" class="form-control shadow-none">
+					    	<input type="date" class="form-control shadow-none" name="check_out" id="check_out" min="<?php echo date('Y-m-d'); ?>">
 						</div>
 						<div class="col-lg-3 mb-3">
 							<label class="form-label" style="font-weight: 500;">Adult</label>
-					    	<select class="form-select shadow-none">
-							  <option selected>Open this select menu</option>
-							  <option value="1">One</option>
-							  <option value="2">Two</option>
-							  <option value="3">Three</option>
+					    	<select class="form-select shadow-none" name="adult">
+							  <option value="1" selected>1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
 							</select>
 						</div>
 						<div class="col-lg-2 mb-3">
 							<label class="form-label" style="font-weight: 500;">Children</label>
-					    	<select class="form-select shadow-none">
-							  <option selected>Open this select menu</option>
-							  <option value="1">One</option>
-							  <option value="2">Two</option>
-							  <option value="3">Three</option>
+					    	<select class="form-select shadow-none" name="children">
+							  <option value="0" selected>Selecciona</option>
+							  <option value="1">1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
 							</select>
 						</div>
 						<div class="boton col-lg-1 mb-lg-3 mt-2">
-							<button type="submit" class="btn text-white shadow-none custom-bg">Submit</button>
+							<button type="submit" class="btn text-white shadow-none custom-bg" id="btnForm" hidden>Submit</button>
 						</div>
 					</div>
 				</form>
@@ -100,6 +146,117 @@
 		</div>
 	</div>
 
+	<!-- Modal con el resultado de la reservacion -->
+	<div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+	<script>
+        // Get the modal and close button elements
+        const modal = document.getElementById('reservationModal');
+        const closeBtn = document.querySelector('.close');
+
+        function updateUrlOnClose() {
+		  const url = new URL(window.location.href);
+		  url.searchParams.delete('modalData');
+		  window.history.replaceState({}, document.title, url.toString());
+		}
+
+        // Check if modal data is present in the query string
+        const modalDataParam = new URLSearchParams(window.location.search).get('modalData');
+        if (modalDataParam) {
+            // Parse the JSON data and display the modal
+            const modalData = JSON.parse(modalDataParam);
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = modalData.message;
+
+            // Set modal type (success or error)
+            modal.classList.add(modalData.type);
+
+            // Display the modal
+            modal.style.display = 'block';
+        }
+
+        // Close the modal when the close button is clicked
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modal.classList.remove('success', 'error'); // Remove any added classes
+            updateUrlOnClose();
+        });
+
+        // Close the modal when clicking outside the modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('success', 'error'); // Remove any added classes
+                updateUrlOnClose();
+            }
+        }
+    </script>
+
+    <!-- Validacion fechas -->
+	<script>
+		const checkInInput = document.getElementById('check_in');
+		const checkOutInput = document.getElementById('check_out');
+		const btnForm = document.getElementById('btnForm');
+		const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+		var cont = 0;
+
+		// Limpieza del check in y check out
+
+		window.addEventListener('load', function() {
+  			clearCheckInCheckOut(); // Call the clearing function
+		});
+
+		function clearCheckInCheckOut() {
+		  const checkInInput = document.getElementById('check_in');
+		  const checkOutInput = document.getElementById('check_out');
+
+		  if (checkInInput && checkOutInput) {
+		    checkInInput.value = ''; // Clear check-in input
+		    checkOutInput.value = ''; // Clear check-out input
+		  }
+		}
+
+		checkInInput.addEventListener('change', () => {
+			if (checkInInput.value < today) {
+			  alert('Please select a check-in date on or after today.');
+			  checkInInput.value = ''; // Clear the input if it's an invalid date
+			}else{
+				cont++;
+				alert(cont);
+				updateCheckoutMin();
+				if(cont == 2){
+					alert("ya se cumplio");
+					btnForm.removeAttribute("hidden");
+		 		}
+			}
+		});
+		checkOutInput.addEventListener('change', () => {
+			if (checkOutInput.value < today || checkOutInput.value < checkInInput.value) {
+			  alert('Please select a correct check-out date');
+			  checkOutInput.value = ''; // Clear the input if it's an invalid date
+			}else{
+				cont++;
+				alert(cont);
+				if(cont == 2){
+					alert("ya se cumplio");
+					btnForm.removeAttribute("hidden");
+				 }
+			}
+		});
+
+		function updateCheckoutMin() {
+		  const checkInDate = checkInInput.value; // Get the check-in date
+		  if (!checkInDate) return; // If no check-in date is selected, do nothing
+
+		  // Set the check-out input's min attribute to the check-in date
+		  checkOutInput.min = checkInDate;
+		}
+	</script>
 
 	<!-- Our rooms -->
 	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR ROOMS</h2>

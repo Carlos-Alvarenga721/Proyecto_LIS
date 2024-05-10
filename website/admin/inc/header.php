@@ -21,9 +21,6 @@
                   <li class="nav-item">
                     <a class="nav-link text-white" href="#">Users</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="settings.php">Settings</a>
-                  </li>
                 </ul>
             </div>
         </div>
