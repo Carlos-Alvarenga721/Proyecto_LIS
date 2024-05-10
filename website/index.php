@@ -218,6 +218,7 @@
 		  if (checkInInput && checkOutInput) {
 		    checkInInput.value = ''; // Clear check-in input
 		    checkOutInput.value = ''; // Clear check-out input
+		    cont = 0;
 		  }
 		}
 
