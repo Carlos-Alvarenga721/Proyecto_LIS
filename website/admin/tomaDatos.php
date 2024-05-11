@@ -2,7 +2,7 @@
 
   require_once('inc/dbConnection.php');
 
-  $sql = "SELECT id, fechaEntrada, fechaSalida, adultos, menores FROM reservaciones";
+  $sql = "SELECT id, fechaEntrada, fechaSalida, adultos, menores FROM reservaciones ORDER BY id";
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_num_rows($result) > 0) {

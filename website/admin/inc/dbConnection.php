@@ -1,15 +1,15 @@
 <?php
 
-// Database connection details (replace with your actual credentials)
+// Detalles para Database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "hbwebsite";
 
-// Create connection
+// Se crea la conexion
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// Check
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
