@@ -19,52 +19,72 @@ session_regenerate_id(true);
 
     <div class="container-fluid" id="main-content">
         <div class="row">
+          <div class="col-lg-10 ms-auto p-4 overflow-hidden">
+            <label class="form-label" style="font-weight: 500;">ID</label>
+            <select class="form-select" id="reservationSelect">
+              <option selected>Seleccione la id</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" id="reservationDetails"> 
+            <div class="col-lg-10 ms-auto p-4 overflow-hidden">
+                <div class="row align-items-end">
+                  <div class="col-lg-3 mb-3">
+                    <label class="form-label" style="font-weight: 500;">Fecha de entrada</label>
+                    <input type="date" class="form-control shadow-none" name="check_in" id="check_in" min="<?php echo date('Y-m-d'); ?>">
+                  </div>
+                  <div class="col-lg-3 mb-3">
+                    <label class="form-label" style="font-weight: 500;">Fecha de Salida</label>
+                    <input type="date" class="form-control shadow-none" name="check_out" id="check_out" min="<?php echo date('Y-m-d'); ?>">
+                  </div>
+                  <div class="col-lg-2 mb-3">
+                    <label class="form-label" style="font-weight: 500;">Adultos</label>
+                    <select class="form-select shadow-none" name="adult">
+                      <option value="1" selected>1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-2 mb-3">
+                    <label class="form-label" style="font-weight: 500;">Menores</label>
+                    <select class="form-select shadow-none" name="children">
+                      <option value="0" selected>0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-1 mb-lg-3 mt-2">
+                    <button type="button" class="btn btn-primary shadow-none" id="btnActualizar" hidden>Actualizar</button>
+                  </div>
+                  <div class="col-lg-1 mb-lg-3 mt-2">
+                    <button type="button" class="btn btn-danger shadow-none" id="btnEliminar" hidden>Eliminar</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden">
                 <button type="button" class="btn btn-success mb-3" style="float: right;" id="updateButton">Actualizar datos</button>
-                <script>
-                    const updateButton = document.getElementById('updateButton');
-
-                    updateButton.addEventListener('click', fetchDataAndUpdateTable);
-
-                    function fetchDataAndUpdateTable() {
-                      // 1. Fetch Reservation Data (Similar to the PHP code above)
-                      const xhr = new XMLHttpRequest();
-                      xhr.open('GET', 'fetchReservationData.php'); // Replace with your actual data fetching script URL
-                      xhr.onload = function() {
-                        if (xhr.status === 200) {
-                          const reservationData = JSON.parse(xhr.responseText); // Assuming JSON response
-                          updateTableWithData(reservationData); // Function to update table with fetched data
-                        } else {
-                          console.error('Error fetching data:', xhr.statusText);
-                        }
-                      };
-                      xhr.send();
-                    }
-
-                    function updateTableWithData(data) {
-                      const tableBody = document.querySelector('table tbody'); // Assuming you have a <tbody> element in your table
-                      tableBody.innerHTML = ''; // Clear existing table rows
-
-                      data.forEach(reservation => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                          <td class='text-center'>${reservation.id}</td>
-                          <td class='text-center'>${reservation.fechaEntrada}</td>
-                          <td class='text-center'>${reservation.fechaSalida}</td>
-                          <td class='text-center'>${reservation.adultos}</td>
-                          <td class='text-center'>${reservation.menores}</td>
-                        `;
-                        tableBody.appendChild(row);
-                      });
-                    }
-                </script>
-
+                
+                <!-- Carga de datos al recargar pagina -->
                 <?php require('tomaDatos.php');?>
+
+                <!-- Script para actualizar la tabla al recargar o al darle al boton -->
+                <script src="js/updateTable.js"></script>
+
             </div>
         </div>
     </div>
 
     <?php require('inc/scripts.php');?>
+
+    <!-- Toma de datos al seleccionar el id -->
+    <script src="js/registroEspecifico.js"></script>
+
+    <!-- Validacion fechas -->
+    <script src="js/validacionFechas.js"></script>
 
 </body>
 </html>

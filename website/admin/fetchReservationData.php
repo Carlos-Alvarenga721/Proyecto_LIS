@@ -2,17 +2,24 @@
 
   require_once('inc/dbConnection.php');
 
-  $sql = "SELECT id, fechaEntrada, fechaSalida, adultos, menores FROM reservaciones";
+  $sql = "SELECT id, fechaEntrada, fechaSalida, adultos, menores FROM reservaciones ORDER BY id";
   $result = mysqli_query($conn, $sql);
 
-  $reservationData = []; // Array to store reservation data
+  $reservationData = []; // Array para almacenar los datos de las reservaciones
+  $reservationIds = []; // Array para almacenar IDs
   if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
       $reservationData[] = $row;
+      $reservationIds[] = $row['id']; // Extrae ID
     }
   }
 
-  echo json_encode($reservationData); // Convert array to JSON
+  $response = [
+    'data' => $reservationData, // Todos los datos
+    'ids' => $reservationIds // Solo los ID
+  ];
+
+  echo json_encode($response); // array a JSON
 
   mysqli_close($conn);
 
