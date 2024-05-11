@@ -2,7 +2,6 @@ const checkInInput = document.getElementById('check_in');
 const checkOutInput = document.getElementById('check_out');
 const btnForm = document.getElementById('btnForm');
 const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
-var cont = 0;
 
 // Limpieza del check in y check out
 
@@ -17,7 +16,6 @@ function clearCheckInCheckOut() {
   if (checkInInput && checkOutInput) {
     checkInInput.value = ''; // Clear check-in input
     checkOutInput.value = ''; // Clear check-out input
-    cont = 0;
   }
 }
 
@@ -26,22 +24,13 @@ checkInInput.addEventListener('change', () => {
 	  alert('Please select a check-in date on or after today.');
 	  checkInInput.value = ''; // Clear the input if it's an invalid date
 	}else{
-		cont++;
 		updateCheckoutMin();
-		if(cont == 2){
-			btnForm.removeAttribute("hidden");
- 		}
 	}
 });
 checkOutInput.addEventListener('change', () => {
 	if (checkOutInput.value < today || checkOutInput.value < checkInInput.value) {
 	  alert('Please select a correct check-out date');
 	  checkOutInput.value = ''; // Clear the input if it's an invalid date
-	}else{
-		cont++;
-		if(cont == 2){
-			btnForm.removeAttribute("hidden");
-		 }
 	}
 });
 

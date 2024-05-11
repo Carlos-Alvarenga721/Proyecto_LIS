@@ -7,9 +7,15 @@
 
   $reservationData = []; // Array para almacenar los datos de las reservaciones
   $reservationIds = []; // Array para almacenar IDs
-  if (mysqli_num_rows($result) > 0) {
+  if ($result && mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-      $reservationData[] = $row;
+      $reservationData[] = [
+        'id' => $row['id'],
+        'fechaEntrada' => date('d/m/Y', strtotime($row['fechaEntrada'])), // Format date
+        'fechaSalida' => date('d/m/Y', strtotime($row['fechaSalida'])), // Format date
+        'adultos' => $row['adultos'],
+        'menores' => $row['menores']
+      ];
       $reservationIds[] = $row['id']; // Extrae ID
     }
   }

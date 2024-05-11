@@ -1,6 +1,8 @@
 const updateButton = document.getElementById('updateButton');
+const changeButton = document.getElementById('btnCambiar');
 
 updateButton.addEventListener('click', fetchDataAndUpdateTableAndSelect);
+changeButton.addEventListener('click', fetchDataAndUpdateTableAndSelect);
 
 window.onload = function() {
     fetchDataAndUpdateTableAndSelect(); // Fetch and update table data
@@ -15,6 +17,7 @@ function fetchDataAndUpdateTableAndSelect() {
       const response = JSON.parse(xhr.responseText); // JSON
       const reservationData = response.data; // Todos los datos
       const reservationIds = response.ids // solo los id
+      
       updateTableWithData(reservationData); // update de la tabla con los datos obtenidos
     
       // Llenar el select

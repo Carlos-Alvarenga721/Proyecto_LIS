@@ -4,7 +4,7 @@ const inputFechaEntrada = document.getElementById('check_in');
 const inputFechaSalida = document.getElementById('check_out');
 const adultSelect = document.querySelector('select[name="adult"]');
 const childrenSelect = document.querySelector('select[name="children"]');
-const btnActualizar = document.getElementById('btnActualizar');
+const btnCambiar = document.getElementById('btnCambiar');
 const btnEliminar = document.getElementById('btnEliminar');
 
 
@@ -36,12 +36,12 @@ reservationSelect.addEventListener('change', function() {
   const selectedId = this.value;
   if (selectedId !== "") { // Check if a valid ID is selected
     reservationDetails.style.display = 'block'; // Show reservation details container
-    btnActualizar.removeAttribute('hidden'); // Unhide 'Actualizar' button
+    btnCambiar.removeAttribute('hidden'); // Unhide 'Actualizar' button
     btnEliminar.removeAttribute('hidden'); // Unhide 'Eliminar' button
     fetchReservationDetails(selectedId); // Fetch and update reservation details
   } else {
     reservationDetails.style.display = 'none'; // Hide reservation details container
-    btnActualizar.setAttribute('hidden', true); // Hide 'Actualizar' button
+    btnCambiar.setAttribute('hidden', true); // Hide 'Actualizar' button
     btnEliminar.setAttribute('hidden', true); // Hide 'Eliminar' button
     // Clear form elements (optional)
   }
