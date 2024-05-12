@@ -18,7 +18,7 @@ session_regenerate_id(true);
     <?php require('inc/header.php'); ?>
 
     <div class="container-fluid" id="main-content">
-        <form action="updateSelected.php" method="post">
+        <form action="updateOrEliminateSelected.php" method="post">
             <div class="row">
               <div class="col-lg-10 ms-auto p-4 overflow-hidden">
                 <label class="form-label" style="font-weight: 500;">ID</label>
@@ -56,10 +56,10 @@ session_regenerate_id(true);
                         </select>
                       </div>
                       <div class="col-lg-1 mb-lg-3 mt-2">
-                        <button type="submit" class="btn btn-primary shadow-none" id="btnCambiar" hidden>Actualizar</button>
+                        <button type="submit" class="btn btn-primary shadow-none" id="btnCambiar" name="btnCambiar" hidden>Actualizar</button>
                       </div>
                       <div class="col-lg-1 mb-lg-3 mt-2">
-                        <button type="button" class="btn btn-danger shadow-none" id="btnEliminar" hidden>Eliminar</button>
+                        <button type="submit" class="btn btn-danger shadow-none" id="btnEliminar" name="btnEliminar" hidden>Eliminar</button>
                       </div>
                     </div>
                 </div>
@@ -83,10 +83,6 @@ session_regenerate_id(true);
     <?php require('inc/scripts.php');?>
     <!-- Toma de datos al seleccionar el id -->
     <script src="js/registroEspecifico.js"></script>
-
-    <!-- Actualizar registro
-    <script src="js/updateDb.js"></script>
-    -->
 
     <!-- Validacion fechas -->
     <script src="js/validacionFechas.js"></script>
