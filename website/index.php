@@ -82,22 +82,22 @@
 		<div class="swiper swiper-container">
 		    <div class="swiper-wrapper">
 		      <div class="swiper-slide">
-		        <img src="images/carousel/1.png" class="w-100 d-block">
+		        <img src="images/carousel/img1.png" class="w-100 d-block">
 		      </div>
 		      <div class="swiper-slide">
-		        <img src="images/carousel/2.png" class="w-100 d-block">
+		        <img src="images/carousel/img2.png" class="w-100 d-block">
 		      </div>
 		      <div class="swiper-slide">
-		        <img src="images/carousel/3.png" class="w-100 d-block">
+		        <img src="images/carousel/img3.png" class="w-100 d-block">
 		      </div>
 		      <div class="swiper-slide">
-		        <img src="images/carousel/4.png" class="w-100 d-block">
+		        <img src="images/carousel/img4.png" class="w-100 d-block">
 		      </div>
 		      <div class="swiper-slide">
-		        <img src="images/carousel/5.png" class="w-100 d-block">
+		        <img src="images/carousel/img5.png" class="w-100 d-block">
 		      </div>
 		      <div class="swiper-slide">
-		        <img src="images/carousel/6.png" class="w-100 d-block">
+		        <img src="images/carousel/img6.png" class="w-100 d-block">
 		      </div>
 		    </div>
   		</div>
@@ -107,21 +107,21 @@
 	<div class="container availability-form">
 		<div class="row">
 			<div class="col-lg-12 bg-white shadow p-4 rounded">
-				<h5 class="mb-4">Check Booking Availability</h5>
+				<h5 class="mb-4">Chequeo de disponibilidad de reservacion</h5>
 
 				<!-- processReservation.php para almacenar la reservacion en la base de datos -->
 				<form action="processReservation.php" method="post">
 					<div class="row align-items-end">
 						<div class="col-lg-3 mb-3">
-							<label class="form-label" style="font-weight: 500;">Check-in</label>
+							<label class="form-label" style="font-weight: 500;">Fecha de entrada</label>
 					    	<input type="date" class="form-control shadow-none" name="check_in" id="check_in" min="<?php echo date('Y-m-d'); ?>">
 						</div>
 						<div class="col-lg-3 mb-3">
-							<label class="form-label" style="font-weight: 500;">Check-out</label>
+							<label class="form-label" style="font-weight: 500;">Fecha de salida</label>
 					    	<input type="date" class="form-control shadow-none" name="check_out" id="check_out" min="<?php echo date('Y-m-d'); ?>">
 						</div>
 						<div class="col-lg-3 mb-3">
-							<label class="form-label" style="font-weight: 500;">Adult</label>
+							<label class="form-label" style="font-weight: 500;">Adultos</label>
 					    	<select class="form-select shadow-none" name="adult">
 							  <option value="1" selected>1</option>
 							  <option value="2">2</option>
@@ -129,7 +129,7 @@
 							</select>
 						</div>
 						<div class="col-lg-2 mb-3">
-							<label class="form-label" style="font-weight: 500;">Children</label>
+							<label class="form-label" style="font-weight: 500;">Menores</label>
 					    	<select class="form-select shadow-none" name="children">
 							  <option value="0" selected>Selecciona</option>
 							  <option value="1">1</option>
@@ -138,7 +138,7 @@
 							</select>
 						</div>
 						<div class="boton col-lg-1 mb-lg-3 mt-2">
-							<button type="submit" class="btn text-white shadow-none custom-bg" id="btnForm" hidden>Submit</button>
+							<button type="submit" class="btn text-white shadow-none custom-bg" id="btnForm" hidden>Reservar</button>
 						</div>
 					</div>
 				</form>
@@ -201,93 +201,74 @@
 	<script src="js/validacionFechas.js"></script>
 
 	<!-- Our rooms -->
-	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR ROOMS</h2>
+	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font" name="instalaciones" id="instalaciones">Instalaciones</h2>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 col-md-6 my-3">
 				<div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
-				  <img src="images/rooms/1.jpg" class="card-img-top">
+				  <img src="images/rooms/c1.png" class="card-img-top">
 				  <div class="card-body">
-				    <h5>Simple Room Name</h5>
-				    <h6 class="mb-4">$200 per night</h6>
+				    <h5>Cuarto simple</h5>
+				    <h6 class="mb-4">$100 por noche</h6>
 				    <div class="features mb-4">
-				    	<h6 class="mb-1">Features</h6>
+				    	<h6 class="mb-1">Caracteristicas</h6>
 				    	<span class="badge rounded-pill text-bg-light text-wrap">
-				    		2 Rooms
+				    		1 Cama grande
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		1 Bathroom
+				    		1 Mesa de noche
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		1 Balcony
+				    		1 Baño
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		3 Sofa
+				    		1 Sofá
 						</span>
 				    </div>
 				    <div class="facilities mb-4">
-				    	<h6 class="mb-1">Facilities</h6>
+				    	<h6 class="mb-1">Comodidades</h6>
 				    	<span class="badge rounded-pill text-bg-light text-wrap">
 				    		Wifi
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		Television
-						</span>
-						<span class="badge rounded-pill text-bg-light text-wrap">
 				    		AC
-						</span>
-						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		Room heater
 						</span>
 				    </div>
 					<div class="guests mb-4">
-				    	<h6 class="mb-1">Guest</h6>
+				    	<h6 class="mb-1">Capacidad</h6>
 				    	<span class="badge rounded-pill text-bg-light text-wrap">
-				    		5 Adults
+				    		2 Adultos
 						</span>
-						<span class="badge rounded-pill text-bg-light text-wrap">
-					    	4 Children
-						</span>
-				    </div>
-				    <div class="rating mb-4">
-				    	<h6 class="mb-1">Rating</h6>
-				    	<span class="badge rounded-pill bg-light">
-					    	<i class="bi bi-star-fill text-warning"></i>
-					    	<i class="bi bi-star-fill text-warning"></i>
-					    	<i class="bi bi-star-fill text-warning"></i>
-					    	<i class="bi bi-star-fill text-warning"></i>
-				    	</span>
-				    </div>
-				    <div class="d-flex justify-content-evenly mb-2">
-				    	<a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
-				    	<a href="#" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
 				    </div>
 				  </div>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6 my-3">
 				<div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
-				  <img src="images/rooms/1.jpg" class="card-img-top">
+				  <img src="images/rooms/c2.png" class="card-img-top">
 				  <div class="card-body">
-				    <h5>Simple Room Name</h5>
-				    <h6 class="mb-4">$200 per night</h6>
+				    <h5>Cuarto grande</h5>
+				    <h6 class="mb-4">$200 por noche</h6>
 				    <div class="features mb-4">
-				    	<h6 class="mb-1">Features</h6>
+				    	<h6 class="mb-1">Caracteristicas</h6>
 				    	<span class="badge rounded-pill text-bg-light text-wrap">
-				    		2 Rooms
+				    		1 Cama grande
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		1 Bathroom
+				    		2 Camas pequeñas
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		1 Balcony
+				    		2 Mesas de noche
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		3 Sofa
+				    		1 Baño
+						</span>
+						<span class="badge rounded-pill text-bg-light text-wrap">
+				    		1 Sofa
 						</span>
 				    </div>
 				    <div class="facilities mb-4">
-				    	<h6 class="mb-1">Facilities</h6>
+				    	<h6 class="mb-1">Comodidades</h6>
 				    	<span class="badge rounded-pill text-bg-light text-wrap">
 				    		Wifi
 						</span>
@@ -297,104 +278,67 @@
 						<span class="badge rounded-pill text-bg-light text-wrap">
 				    		AC
 						</span>
-						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		Room heater
-						</span>
 				    </div>
 					<div class="guests mb-4">
-				    	<h6 class="mb-1">Guest</h6>
+				    	<h6 class="mb-1">Capacidad</h6>
 				    	<span class="badge rounded-pill text-bg-light text-wrap">
-				    		5 Adults
+				    		2 Adultos
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-					    	4 Children
+					    	2 Niños
 						</span>
-				    </div>
-				    <div class="rating mb-4">
-				    	<h6 class="mb-1">Rating</h6>
-				    	<span class="badge rounded-pill bg-light">
-					    	<i class="bi bi-star-fill text-warning"></i>
-					    	<i class="bi bi-star-fill text-warning"></i>
-					    	<i class="bi bi-star-fill text-warning"></i>
-					    	<i class="bi bi-star-fill text-warning"></i>
-				    	</span>
-				    </div>
-				    <div class="d-flex justify-content-evenly mb-2">
-				    	<a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
-				    	<a href="#" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
 				    </div>
 				  </div>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6 my-3">
 				<div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
-				  <img src="images/rooms/1.jpg" class="card-img-top">
+				  <img src="images/rooms/c3.png" class="card-img-top">
 				  <div class="card-body">
-				    <h5>Simple Room Name</h5>
-				    <h6 class="mb-4">$200 per night</h6>
+				    <h5>Zona para eventos</h5>
+				    <h6 class="mb-4">$300 por dia</h6>
 				    <div class="features mb-4">
-				    	<h6 class="mb-1">Features</h6>
+				    	<h6 class="mb-1">Caracteristicas</h6>
 				    	<span class="badge rounded-pill text-bg-light text-wrap">
-				    		2 Rooms
+				    		Amplio espacio
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		1 Bathroom
+				    		30 Sillas
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		1 Balcony
+				    		4 Mesas
 						</span>
 						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		3 Sofa
+				    		2 Baños
 						</span>
+						<span class="badge rounded-pill text-bg-light text-wrap">
+				    		4 hamacas
+						</span>
+						<span class="badge rounded-pill text-bg-light text-wrap">
+				    		Piscina
+						</span>
+
 				    </div>
 				    <div class="facilities mb-4">
-				    	<h6 class="mb-1">Facilities</h6>
+				    	<h6 class="mb-1">Comodidades</h6>
 				    	<span class="badge rounded-pill text-bg-light text-wrap">
 				    		Wifi
 						</span>
-						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		Television
-						</span>
-						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		AC
-						</span>
-						<span class="badge rounded-pill text-bg-light text-wrap">
-				    		Room heater
-						</span>
 				    </div>
 					<div class="guests mb-4">
-				    	<h6 class="mb-1">Guest</h6>
+				    	<h6 class="mb-1">Capacidad</h6>
 				    	<span class="badge rounded-pill text-bg-light text-wrap">
-				    		5 Adults
+				    		30 personas
 						</span>
-						<span class="badge rounded-pill text-bg-light text-wrap">
-					    	4 Children
-						</span>
-				    </div>
-				    <div class="rating mb-4">
-				    	<h6 class="mb-1">Rating</h6>
-				    	<span class="badge rounded-pill bg-light">
-					    	<i class="bi bi-star-fill text-warning"></i>
-					    	<i class="bi bi-star-fill text-warning"></i>
-					    	<i class="bi bi-star-fill text-warning"></i>
-					    	<i class="bi bi-star-fill text-warning"></i>
-				    	</span>
-				    </div>
-				    <div class="d-flex justify-content-evenly mb-2">
-				    	<a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
-				    	<a href="#" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
 				    </div>
 				  </div>
 				</div>
-			</div>
-			<div class="col-lg-12 text-center mt-5">
-				<a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Rooms >>></a>
 			</div>
 		</div>
 	</div>
 
 	<!-- Our facilites -->
-	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
+	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font" name="comodidades" id="comodidades">Nuestras comodidades</h2>
 	<div class="container">
 		<div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
 			<div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
@@ -402,29 +346,26 @@
 				<h5 class="mt-3">Wifi</h5>
 			</div>
 			<div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-				<img src="images/facilities/wifi.svg" width="80px">
-				<h5 class="mt-3">Wifi</h5>
+				<img src="images/facilities/tv.svg" width="80px">
+				<h5 class="mt-3">Television</h5>
 			</div>
 			<div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-				<img src="images/facilities/wifi.svg" width="80px">
-				<h5 class="mt-3">Wifi</h5>
+				<img src="images/facilities/ac.svg" width="80px">
+				<h5 class="mt-3">Aire acondicionado</h5>
 			</div>
 			<div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-				<img src="images/facilities/wifi.svg" width="80px">
-				<h5 class="mt-3">Wifi</h5>
+				<img src="images/facilities/radio.svg" width="80px">
+				<h5 class="mt-3">Radio</h5>
 			</div>
 			<div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-				<img src="images/facilities/wifi.svg" width="80px">
-				<h5 class="mt-3">Wifi</h5>
-			</div>
-			<div class="col-lg-12 text-center mt-5">
-				<a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Facilities >>></a>
+				<img src="images/facilities/piscina.svg" width="80px">
+				<h5 class="mt-3">Piscina</h5>
 			</div>
 		</div>
 	</div>
 
 	<!-- Testimonials -->
-	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">TESTIMONIALS</h2>
+	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font" name="testimonios" id="testimonios">Testimonios</h2>
 	<div class="container mt-5">
 		<!-- Swiper -->
 		<div class="swiper swiper-testimonials">
@@ -432,13 +373,11 @@
 
 	  		<div class="swiper-slide bg-white p-4">
 		    	<div class="profile d-flex align-items-center mb-3">
-		    		<img src="images/facilities/wifi.svg" width="30px">
-		    		<h6 class="m-0 ms-2">Random User 1</h6>
+		    		<img src="images/about/rating.svg" width="30px">
+		    		<h6 class="m-0 ms-2">María López</h6>
 		    	</div>
 		    	<p>
-		    		Bla Bla Bla Bla.
-		    		Bla Bla Bla Bla Bla.
-		    		Bla Bla.
+		    		"¡Pasamos unas vacaciones inolvidables en este rancho! La ubicación era perfecta, a solo unos minutos de la hermosa playa San Diego. La propiedad era espaciosa y cómoda, con todo lo que necesitábamos para una estancia relajante. Los jardines eran hermosos y la piscina era perfecta para refrescarse en los días calurosos. Los anfitriones fueron muy amables y serviciales, siempre dispuestos a ayudarnos con cualquier cosa que necesitáramos. Sin duda, volveremos a este rancho en el futuro. ¡Lo recomiendo al 100%!"
 		    	</p>
 		    	<div class="rating">
 		    		<i class="bi bi-star-fill text-warning"></i>
@@ -449,13 +388,11 @@
 		  	</div>
 		  	<div class="swiper-slide bg-white p-4">
 		    	<div class="profile d-flex align-items-center mb-3">
-		    		<img src="images/facilities/wifi.svg" width="30px">
-		    		<h6 class="m-0 ms-2">Random User 1</h6>
+		    		<img src="images/about/rating.svg" width="30px">
+		    		<h6 class="m-0 ms-2">Carlos García</h6>
 		    	</div>
 		    	<p>
-		    		Bla Bla Bla Bla.
-		    		Bla Bla Bla Bla Bla.
-		    		Bla Bla.
+		    		"Estuvimos buscando un lugar tranquilo para desconectarnos de la rutina diaria y este rancho fue la elección perfecta. La tranquilidad del lugar, el sonido de las olas y la brisa del mar nos permitieron relajarnos y disfrutar de un ambiente totalmente diferente. La propiedad estaba muy bien equipada y limpia, y los anfitriones fueron muy atentos y serviciales. Nos ayudaron a planificar algunas actividades en la zona, como paseos a caballo y visitas a pueblos cercanos. Definitivamente, una experiencia que repetiremos."
 		    	</p>
 		    	<div class="rating">
 		    		<i class="bi bi-star-fill text-warning"></i>
@@ -466,13 +403,11 @@
 		  	</div>
 		  	<div class="swiper-slide bg-white p-4">
 		    	<div class="profile d-flex align-items-center mb-3">
-		    		<img src="images/facilities/wifi.svg" width="30px">
-		    		<h6 class="m-0 ms-2">Random User 1</h6>
+		    		<img src="images/about/rating.svg" width="30px">
+		    		<h6 class="m-0 ms-2">Ana Sánchez</h6>
 		    	</div>
 		    	<p>
-		    		Bla Bla Bla Bla.
-		    		Bla Bla Bla Bla Bla.
-		    		Bla Bla.
+		    		"Este rancho fue el lugar ideal para celebrar el cumpleaños de mi madre. Nos reunimos toda la familia y pasamos unos días increíbles. La propiedad era lo suficientemente grande para que todos tuviéramos espacio y pudiéramos disfrutar de diferentes actividades. Los niños se divirtieron mucho en la piscina y jugando en los jardines. Los adultos pudimos disfrutar de la tranquilidad del lugar y de la deliciosa comida que prepararon los anfitriones. Sin duda, una celebración que recordaremos por siempre."
 		    	</p>
 		    	<div class="rating">
 		    		<i class="bi bi-star-fill text-warning"></i>
@@ -485,21 +420,18 @@
 		</div>
 		<div class="swiper-pagination"></div>
 		</div>
-		<div class="col-lg-12 text-center mt-5">
-			<a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Know More >>></a>
-		</div>
 	</div>
 
 	<!-- Reach Us -->
-	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
+	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font" name="visitanos" id="visitanos">Visitanos</h2>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
-				<iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15528.428566436925!2d-89.00638889999999!3d13.343610850000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7cba1049086983%3A0xda43ef28ca8faef3!2sPlaya%20Costa%20del%20Sol!5e0!3m2!1ses-419!2ssv!4v1711497030150!5m2!1ses-419!2ssv"loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe class="w-100 rounded" height="470px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15519.774255435173!2d-89.28014040000001!3d13.47757525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7cd24bde2dcdad%3A0x412db02b9e27496b!2sPlaya%20San%20Diego!5e0!3m2!1ses-419!2ssv!4v1715551732833!5m2!1ses-419!2ssv"loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			<div class="col-lg-4 col-md-4">
 				<div class="bg-white p-4 rounded mb-4">
-					<h5>Call us</h5>
+					<h5>Llamanos</h5>
 					<a href="tel: +503" class="d-inline-block mb-2 text-decoration-none text-dark">
 						<i class="bi bi-telephone-fill"></i> Numero de telefono
 					</a>
@@ -509,7 +441,13 @@
 					</a>
 				</div>
 				<div class="bg-white p-4 rounded mb-4">
-					<h5>Follow us</h5>
+					<h5>Escribenos</h5>
+					<a href="tel: +503" class="d-inline-block mb-2 text-decoration-none text-dark">
+						<i class="bi bi-envelope-fill"></i> playukiSanDiego@gmail.com
+					</a>
+				</div>
+				<div class="bg-white p-4 rounded mb-4">
+					<h5>Siguenos</h5>
 					<a href="#" class="d-inline-block mb-3">
 						<span class="badge bg-light text-dark fs-6 p-2">
 							<i class="bi bi-twitter-x me-1"></i> Twitter
@@ -527,6 +465,7 @@
 							<i class="bi bi-instagram me-1"></i> Instagram
 						</span>
 					</a>
+					<br>
 				</div>
 
 			</div>

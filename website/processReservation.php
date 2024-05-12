@@ -3,7 +3,7 @@
 // script de conexion a la base de datos
 require_once('inc/dbConnection.php');
 
-// obtencio de los datos
+// obtencioN de los datos
 $check_in = filter_input(INPUT_POST, 'check_in', FILTER_UNSAFE_RAW);
 $check_out = filter_input(INPUT_POST, 'check_out', FILTER_UNSAFE_RAW);
 $adult = filter_input(INPUT_POST, 'adult', FILTER_UNSAFE_RAW);
