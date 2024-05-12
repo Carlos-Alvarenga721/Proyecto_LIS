@@ -10,8 +10,8 @@
       echo "<thead>";
         echo "<tr>";
           echo "<th class='text-center'>ID</th>";
-          echo "<th class='text-center'>Fecha de entrada</th>";
-          echo "<th class='text-center'>Fecha de salida</th>";
+          echo "<th class='text-center'>Fecha de entrada (dia/mes/año)</th>";
+          echo "<th class='text-center'>Fecha de salida (dia/mes/año)</th>";
           echo "<th class='text-center'>Adultos</th>";
           echo "<th class='text-center'>Menores</th>";
         echo "</tr>";
