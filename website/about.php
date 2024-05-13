@@ -17,55 +17,37 @@
 	<?php require('inc/header.php');?>
 
 	<div class="my-5 px-4">
-		<h2 class="fw-bold h-font text-center">OUR FACILITIES</h2>
+		<h2 class="fw-bold h-font text-center">Sobre nosotros</h2>
 		<div class="h-line bg-dark"></div>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe velit tenetur fugit accusantium, nobis facere eligendi accusamus quaerat, <br> molestias, sunt exercitationem necessitatibus earum voluptatem voluptatum ducimus perferendis ea porro enim!
+		<p class="mt-3">
+			Bienvenido a Rancho San Diego, su oasis de paz y tranquilidad frente al mar en Playa San Diego.
+			Ubicado en un lugar privilegiado, a solo 45 minutos de la vibrante ciudad de San Salvador, Rancho San Diego ofrece a sus huéspedes un escape perfecto del ajetreo de la vida cotidiana. Rodeado de exuberantes jardines tropicales y con impresionantes vistas al Océano Pacífico, nuestro rancho es el lugar ideal para relajarse, recargar energías y crear recuerdos inolvidables.
+			<br>
+			<br>
+			En Rancho San Diego, nos apasiona brindar a nuestros huéspedes una experiencia excepcional. Desde el momento en que llegue, será recibido por nuestro amable y atento personal, quienes se dedicarán a garantizar que su estadía sea perfecta. Ofrecemos una variedad de alojamientos para satisfacer todas sus necesidades, desde cómodas habitaciones estándar hasta espaciosas villas frente al mar. Todas nuestras habitaciones están decoradas con buen gusto y cuentan con todas las comodidades modernas para garantizarle una estancia confortable.
 		</p>
 	</div>
 
 	<div class="container">
 		<div class="row justify-content-between align-items-center">
 			<div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
-				<h3 class="mb-3">Lorem ipsum, dolor sit</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, recusandae. Facilis praesentium ea itaque consequatur beatae consectetur ut, illum quos voluptas necessitatibus suscipit dolor totam tenetur doloremque ratione quae deserunt.</p>
+				<h3 class="mb-3">Doña Sofía Martínez</h3>
+				<p>Nació en un pequeño cantón cerca de San Diego, El Salvador, en el seno de una humilde familia de agricultores. Desde pequeña, Sofía se sintió fascinada por la belleza natural de la región, especialmente por las playas y las exuberantes montañas.
+				<br>
+				<br>
+				A medida que crecía, desarrolló un profundo respeto por la tierra y un fuerte deseo de preservar su belleza natural. Cuando era joven, heredó una pequeña parcela de tierra de sus padres. Con trabajo duro y dedicación, transformó la tierra en una próspera granja, cultivando frutas y verduras frescas.
+				<br>
+				<br>
+				Con el tiempo, Sofía comenzó a soñar con crear un lugar donde las personas pudieran conectarse con la naturaleza, disfrutar de la belleza de la región y encontrar paz y tranquilidad. Utilizando las ganancias de su granja, compró más tierras y comenzó a construir el Rancho San Diego. Con su visión y esfuerzo, transformó la tierra en un oasis de paz y belleza, con amplios jardines, huertos, establos y una hermosa casa de campo. El Rancho San Diego se convirtió rápidamente en un destino popular para las personas que buscaban escapar del ajetreo de la vida cotidiana y disfrutar de la belleza natural de El Salvador.
+</p>
 			</div>
 			<div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
-				<img src="images/about/about.jpg" alt="cofunder" class="w-100">
+				<img src="images/about/about.png" alt="funder" class="w-100">
 			</div>
 		</div>
 	</div>
 
-	<div class="container mt-5">
-		<div class="row">
-			<div class="col-lg-3 col-md-6 mb-4 px-4">
-				<div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-					<img src="images/about/hotel.svg" alt="Rooms" width="70px">
-					<h4 class="mt-3">100+ ROOMS</h4>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 mb-4 px-4">
-				<div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-					<img src="images/about/customers.svg" alt="Customers" width="70px">
-					<h4 class="mt-3">200+ CUSTOMERS</h4>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 mb-4 px-4">
-				<div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-					<img src="images/about/rating.svg" alt="reviews" width="70px">
-					<h4 class="mt-3">150+ REVIEWS</h4>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 mb-4 px-4">
-				<div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-					<img src="images/about/staff.svg" alt="staff" width="70px">
-					<h4 class="mt-3">200+ STAFF</h4>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<h3 class="my-5 fw-bold h-font text-center">MANAGEMENT TEAM</h3>
+	<h3 class="my-5 fw-bold h-font text-center">Nuestro equipo</h3>
 	<div class="container px-4">
 		<!-- Swiper -->
 		<div class="swiper mySwiper">
