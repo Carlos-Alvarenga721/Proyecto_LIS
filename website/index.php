@@ -1,3 +1,7 @@
+<?php
+require_once('inc/dbConnection.php'); // Adjust the path if necessary
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,6 +73,14 @@
         .modal-content.error {
             border-color: red;
         }
+		/*Parte del color de calendario*/
+		.occupied-date {
+            background-color: red;
+        }
+        .available-date {
+            background-color: green;
+		}
+
 	</style>
 
 </head>
@@ -146,6 +158,55 @@
 		</div>
 	</div>
 
+	<!--Scripts para poder hacer los colores en el calendario-->
+	<script>
+		// Función para marcar las fechas ocupadas en los inputs de fecha
+		function markReservedDates(reservedDates) {
+			var checkInInput = document.getElementById('check_in');
+			var checkOutInput = document.getElementById('check_out');
+			var currentDate = new Date(checkInInput.value);
+			var endDate = new Date(checkOutInput.value);
+			while (currentDate <= endDate) {
+				var dateString = currentDate.toISOString().slice(0, 10);
+				if (reservedDates.includes(dateString)) {
+					// Marcar la fecha como ocupada
+					checkInInput.classList.remove('available-date');
+					checkOutInput.classList.remove('available-date');
+					checkInInput.classList.add('occupied-date');
+					checkOutInput.classList.add('occupied-date');
+				} else {
+					// Marcar la fecha como disponible
+					checkInInput.classList.remove('occupied-date');
+					checkOutInput.classList.remove('occupied-date');
+					checkInInput.classList.add('available-date');
+					checkOutInput.classList.add('available-date');
+				}
+				currentDate.setDate(currentDate.getDate() + 1);
+			}
+		}
+
+		// Cargar las fechas ocupadas al cargar la página
+		window.onload = function() {
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === XMLHttpRequest.DONE) {
+					if (xhr.status === 200) {
+						var reservedDates = JSON.parse(xhr.responseText);
+						markReservedDates(reservedDates);
+						alert('ELIMINAR ESTO2');
+
+					} else {
+						console.error('Hubo un error al cargar las fechas ocupadas.');
+						alert('ELIMINAR ESTO');
+					}
+				}
+			};
+			xhr.open('GET', 'getReservedDates.php', true);
+			xhr.send();
+		};
+	</script>
+
+
 	<!-- Modal con el resultado de la reservacion -->
 	<div id="reservationModal" class="modal">
         <div class="modal-content">
@@ -202,7 +263,7 @@
 		const checkInInput = document.getElementById('check_in');
 		const checkOutInput = document.getElementById('check_out');
 		const btnForm = document.getElementById('btnForm');
-		const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+		const today = new Date().toISOString().split('T')[0]; // Obtiene la fecha de hoy en formato YYYY-MM-DD
 		var cont = 0;
 
 		// Limpieza del check in y check out
@@ -221,7 +282,7 @@
 		    cont = 0;
 		  }
 		}
-
+	//Validacion para que la fecha de Entrada no sea menor a la fecha de hoy
 		checkInInput.addEventListener('change', () => {
 			if (checkInInput.value < today) {
 			  alert('Please select a check-in date on or after today.');
@@ -236,6 +297,7 @@
 		 		}
 			}
 		});
+		//Validacion para que la fecha de Salida sea mayor a la de Entrada
 		checkOutInput.addEventListener('change', () => {
 			if (checkOutInput.value < today || checkOutInput.value < checkInInput.value) {
 			  alert('Please select a correct check-out date');
