@@ -1,13 +1,13 @@
 const checkInInput = document.getElementById('check_in');
 const checkOutInput = document.getElementById('check_out');
 const btnForm = document.getElementById('btnForm');
-const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+const today = new Date().toISOString().split('T')[0]; // Obtencion de la fecha de hoy en YYYY-MM-DD
 var cont = 0;
 
 // Limpieza del check in y check out
 
 window.addEventListener('load', function() {
-		clearCheckInCheckOut(); // Call the clearing function
+		clearCheckInCheckOut(); // Llamado a la funcion de limpieza del form
 });
 
 function clearCheckInCheckOut() {
@@ -15,8 +15,8 @@ function clearCheckInCheckOut() {
   const checkOutInput = document.getElementById('check_out');
 
   if (checkInInput && checkOutInput) {
-    checkInInput.value = ''; // Clear check-in input
-    checkOutInput.value = ''; // Clear check-out input
+    checkInInput.value = ''; // Limpieza del check-in
+    checkOutInput.value = ''; // Limpieza del check-out
     cont = 0;
   }
 }
@@ -24,7 +24,7 @@ function clearCheckInCheckOut() {
 checkInInput.addEventListener('change', () => {
 	if (checkInInput.value < today) {
 	  alert('Please select a check-in date on or after today.');
-	  checkInInput.value = ''; // Clear the input if it's an invalid date
+	  checkInInput.value = ''; // Limpieza del input si la fecha es invalida
 	}else{
 		cont++;
 		updateCheckoutMin();
@@ -36,7 +36,7 @@ checkInInput.addEventListener('change', () => {
 checkOutInput.addEventListener('change', () => {
 	if (checkOutInput.value < today || checkOutInput.value < checkInInput.value) {
 	  alert('Please select a correct check-out date');
-	  checkOutInput.value = ''; // Clear the input if it's an invalid date
+	  checkOutInput.value = ''; // Limpieza del input si la fecha es invalida
 	}else{
 		cont++;
 		if(cont == 2){
@@ -46,9 +46,9 @@ checkOutInput.addEventListener('change', () => {
 });
 
 function updateCheckoutMin() {
-  const checkInDate = checkInInput.value; // Get the check-in date
-  if (!checkInDate) return; // If no check-in date is selected, do nothing
+  const checkInDate = checkInInput.value; // Tomar la fecha del check-in
+  if (!checkInDate) return; // Si no hay fecha seleccionada, no hacer nada
 
-  // Set the check-out input's min attribute to the check-in date
+  // Establecer una fecha minima para el check-out igual a la fecha del check-in
   checkOutInput.min = checkInDate;
 }

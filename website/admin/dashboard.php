@@ -56,7 +56,7 @@ session_regenerate_id(true);
                         </select>
                       </div>
                       <div class="col-lg-1 mb-lg-3 mt-2">
-                        <button type="submit" class="btn btn-primary shadow-none" id="btnCambiar" name="btnCambiar" hidden>Actualizar</button>
+                        <button type="submit" class="btn btn-primary shadow-none" id="btnCambiar" name="btnCambiar" hidden>Cambiar</button>
                       </div>
                       <div class="col-lg-1 mb-lg-3 mt-2">
                         <button type="submit" class="btn btn-danger shadow-none" id="btnEliminar" name="btnEliminar" hidden>Eliminar</button>

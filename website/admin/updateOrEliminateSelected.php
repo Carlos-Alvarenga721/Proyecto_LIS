@@ -3,7 +3,7 @@
 // script de conexion a la base de datos
 require_once('inc/dbConnection.php');
 
-// obtencioN de los datos
+// obtencion de los datos
 $id = filter_input(INPUT_POST, 'reservationSelect', FILTER_UNSAFE_RAW);
 $check_in = filter_input(INPUT_POST, 'check_in', FILTER_UNSAFE_RAW);
 $check_out = filter_input(INPUT_POST, 'check_out', FILTER_UNSAFE_RAW);
@@ -23,7 +23,7 @@ if(array_key_exists('btnCambiar', $_POST)) {
 
   $stmt = $conn->prepare($sql);
 
-  // Bind parameters
+  // Asignacion de parametros
   $stmt->bind_param("ssssi", $check_in, $check_out, $adult, $children, $id);
 
   if ($stmt->execute()) {
@@ -44,7 +44,7 @@ else if(array_key_exists('btnEliminar', $_POST)) {
 
   $stmt = $conn->prepare($sql);
 
-  // Bind parameters
+  // Asignacion de parametros
   $stmt->bind_param("i", $id);
 
   if ($stmt->execute()) {

@@ -1,9 +1,9 @@
 <?php
 
-// Include the database connection script (if separate)
+// script de conexion a la base de datos
 require_once('inc/dbConnection.php'); // Adjust the path if necessary
 
-// Get form data (sanitize to prevent injection attacks!)
+// toma de datos del form
 $check_in = filter_input(INPUT_POST, 'check_in', FILTER_UNSAFE_RAW);
 $check_out = filter_input(INPUT_POST, 'check_out', FILTER_UNSAFE_RAW);
 $adult = filter_input(INPUT_POST, 'adult', FILTER_UNSAFE_RAW);
@@ -16,57 +16,57 @@ try {
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
-      // Reservation failed
-      // Set an error message and prepare modal data (JSON format)
+      // fallo en la reservacion
+      // Mensaje de error y preparacion de la informacion para el modal (JSON)
       $message = "Lo sentimos, las fechas seleccionadas ya están reservadas.";
       $modalData = json_encode([
-          'type' => 'error', // or 'success' for failure
+          'type' => 'error',
           'message' => $message
 
       ]);
-      // Redirect to index.php with modal data in query string
+      // Redireccion a index.php con los datos para en modal en query string
       $modalQueryString = "?modalData=" . $modalData;
       header('Location: index.php' . $modalQueryString);
-      exit(); // Stop further execution
+      exit();
       
 } else {
     // Las fechas están disponibles, permitir al usuario hacer la reserva
     $sql = "INSERT INTO reservaciones (fechaEntrada, fechaSalida, adultos, menores) VALUES (?, ?, ?, ?)";
   $stmt = $conn->prepare($sql);
 
-  // Bind parameters (improves security and performance)
+  // Asignacion de parametros
   $stmt->bind_param("ssss", $check_in, $check_out, $adult, $children);
 
   if ($stmt->execute()) {
-    // Reservation saved successfully
-    // Set a success message and prepare modal data (JSON format)
+    // Reservacion exitosa
+    // Mensaje de exito y preparacion de la informacion para el modal (JSON)
     $message = "Reservation saved successfully!";
     $modalData = json_encode([
-      'type' => 'success', // or 'error' for failure
+      'type' => 'success',
       'message' => $message
     ]);
 
-    // Redirect to index.php with modal data in query string
+    // Redireccion a index.php con los datos para en modal en query string
     $modalQueryString = "?modalData=" . $modalData;
     header('Location: index.php' . $modalQueryString);
-    exit(); // Stop further execution
+    exit();
 
   } else {
-    // Reservation failed
-    // Set an error message and prepare modal data (JSON format)
+    // fallo en la reservacion
+    // Mensaje de error y preparacion de la informacion para el modal (JSON)
     $message = "Error: " . $conn->error;
     $modalData = json_encode([
-      'type' => 'error', // or 'success' for failure
+      'type' => 'error',
       'message' => $message
     ]);
 
-    // Redirect to index.php with modal data in query string
+    // Redireccion a index.php con los datos para en modal en query string
     $modalQueryString = "?modalData=" . $modalData;
     header('Location: index.php' . $modalQueryString);
-    exit(); // Stop further execution
+    exit();
   }
 
-  // Close the statement and connection
+  // Cerrar statement y la conexion
   $stmt->close();
   $conn->close();
 }

@@ -31,27 +31,26 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		}
 
 		.modal {
-            display: none; /* Initially hidden */
-            position: fixed; /* Stay in place */
-            z-index:2; /* Sit on top */
+            display: none; /* hidden al inicio */
+            position: fixed;
+            z-index:2;
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if content overflows */
-            background-color: rgba(0,0,0,0.4); /* Transparent black background */
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* background oscuro transparente */
         }
 
-        /* Modal content */
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto; /* 15% from top and centered horizontally */
+            margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%; /* Reasonable width */
+            width: 80%;
         }
 
-        /* Close button */
+        /* Boton de cerrar */
         .close {
             color: #fff;
             float: right;
@@ -65,7 +64,6 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
             cursor: pointer;
         }
 
-        /* Modal content with success or error class (optional) */
         .modal-content.success {
             border-color: green;
         }
@@ -115,7 +113,7 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
   		</div>
 	</div>
 
-	<!-- Check availability form -->\
+	<!-- form de registro -->\
 	<div class="container availability-form">
 		<div class="row">
 			<div class="col-lg-12 bg-white shadow p-4 rounded">
@@ -214,7 +212,7 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
     </div>
 
 	<script>
-        // Get the modal and close button elements
+        // obtener el modal y el boton de cerrar
         const modal = document.getElementById('reservationModal');
         const closeBtn = document.querySelector('.close');
 
@@ -224,33 +222,33 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		  window.history.replaceState({}, document.title, url.toString());
 		}
 
-        // Check if modal data is present in the query string
+        // Chequeo de si los datos para el modal estan en el query string
         const modalDataParam = new URLSearchParams(window.location.search).get('modalData');
         if (modalDataParam) {
-            // Parse the JSON data and display the modal
+            // Convertir el JSON y mostrar el modal
             const modalData = JSON.parse(modalDataParam);
             const modalContent = document.getElementById('modal-content');
             modalContent.innerHTML = modalData.message;
 
-            // Set modal type (success or error)
+            // Establecer el tipo de modal
             modal.classList.add(modalData.type);
 
-            // Display the modal
+            // mostrar el modal
             modal.style.display = 'block';
         }
 
-        // Close the modal when the close button is clicked
+        // Cierre del modal
         closeBtn.addEventListener('click', () => {
             modal.style.display = 'none';
-            modal.classList.remove('success', 'error'); // Remove any added classes
+            modal.classList.remove('success', 'error'); // Remover cualquier clase añadida
             updateUrlOnClose();
         });
 
-        // Close the modal when clicking outside the modal content
+        // Cierre del modal al tocar afuera
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = 'none';
-                modal.classList.remove('success', 'error'); // Remove any added classes
+                modal.classList.remove('success', 'error'); // Remover cualquier clase añadida
                 updateUrlOnClose();
             }
         }
@@ -261,7 +259,7 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		const checkInInput = document.getElementById('check_in');
 		const checkOutInput = document.getElementById('check_out');
 		const btnForm = document.getElementById('btnForm');
-		const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+		const today = new Date().toISOString().split('T')[0]; // Fecha de hoy en YYYY-MM-DD
 		var cont = 0;
 
 		// Limpieza del check in y check out
@@ -275,8 +273,8 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		  const checkOutInput = document.getElementById('check_out');
 
 		  if (checkInInput && checkOutInput) {
-		    checkInInput.value = ''; // Clear check-in input
-		    checkOutInput.value = ''; // Clear check-out input
+		    checkInInput.value = ''; // Limpieza del check in
+		    checkOutInput.value = ''; // Limpieza del check out
 		    cont = 0;
 		  }
 		}
@@ -284,7 +282,7 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		checkInInput.addEventListener('change', () => {
 			if (checkInInput.value < today) {
 			  alert('Please select a check-in date on or after today.');
-			  checkInInput.value = ''; // Clear the input if it's an invalid date
+			  checkInInput.value = ''; // Limpieza del input si la fecha es invalida
 			}else{
 				cont++;
 				updateCheckoutMin();
@@ -296,7 +294,7 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		checkOutInput.addEventListener('change', () => {
 			if (checkOutInput.value < today || checkOutInput.value < checkInInput.value) {
 			  alert('Please select a correct check-out date');
-			  checkOutInput.value = ''; // Clear the input if it's an invalid date
+			  checkOutInput.value = ''; // Limpieza del input si la fecha es invalida
 			}else{
 				cont++;	
 				if(cont == 2){					
@@ -306,15 +304,15 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		});
 
 		function updateCheckoutMin() {
-		  const checkInDate = checkInInput.value; // Get the check-in date
-		  if (!checkInDate) return; // If no check-in date is selected, do nothing
+		  const checkInDate = checkInInput.value; // obtener la fecha del check in
+		  if (!checkInDate) return; // si no hay fecha de check in seleccionada, no hacer nada
 
-		  // Set the check-out input's min attribute to the check-in date
+		  // fecha minima del check out igual a la fecha del check in
 		  checkOutInput.min = checkInDate;
 		}
 	</script>
 
-	<!-- Our rooms -->
+	<!-- Habitaciones -->
 	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font" name="instalaciones" id="instalaciones">Instalaciones</h2>
 	<div class="container">
 		<div class="row">
@@ -451,7 +449,7 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		</div>
 	</div>
 
-	<!-- Our facilites -->
+	<!-- Comodidades -->
 	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font" name="comodidades" id="comodidades">Nuestras comodidades</h2>
 	<div class="container">
 		<div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
@@ -478,7 +476,7 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		</div>
 	</div>
 
-	<!-- Testimonials -->
+	<!-- Testimonios -->
 	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font" name="testimonios" id="testimonios">Testimonios</h2>
 	<div class="container mt-5">
 		<!-- Swiper -->
@@ -536,7 +534,7 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 		</div>
 	</div>
 
-	<!-- Reach Us -->
+	<!-- Contactanos -->
 	<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font" name="visitanos" id="visitanos">Visitanos</h2>
 	<div class="container">
 		<div class="row">
@@ -591,7 +589,7 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-	<!-- Initialize Swiper -->
+	<!-- Inicializacion del Swiper -->
 	<script>
 	    var swiper = new Swiper(".swiper-container", {
 	      spaceBetween: 30,
