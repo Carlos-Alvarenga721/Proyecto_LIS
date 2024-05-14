@@ -287,10 +287,8 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 			  checkInInput.value = ''; // Clear the input if it's an invalid date
 			}else{
 				cont++;
-				alert(cont);
 				updateCheckoutMin();
-				if(cont == 2){
-					alert("ya se cumplio");
+				if(cont == 2){					
 					btnForm.removeAttribute("hidden");
 		 		}
 			}
@@ -300,10 +298,8 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 			  alert('Please select a correct check-out date');
 			  checkOutInput.value = ''; // Clear the input if it's an invalid date
 			}else{
-				cont++;
-				alert(cont);
-				if(cont == 2){
-					alert("ya se cumplio");
+				cont++;	
+				if(cont == 2){					
 					btnForm.removeAttribute("hidden");
 				 }
 			}
