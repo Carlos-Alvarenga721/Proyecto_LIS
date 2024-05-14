@@ -53,20 +53,24 @@
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper mb-5">
 			<div class="swiper-slide bg-white text-center overflow-hidden rounded">
-				<img src="images/about/buki.jpg" alt="employe1" class="w-100">
-				<h5>Marco Antonio Solis</h5>
+				<img src="https://i.pinimg.com/564x/ae/9d/a3/ae9da3a68715bf7e052e0fcd4385dc19.jpg" alt="employe1" class="w-100">
+				<h5>Karen Lopez</h5>
+				<h6>Encarga de Limpieza</h6>
 			</div>
 			<div class="swiper-slide bg-white text-center overflow-hidden rounded">
-				<img src="images/about/cr7.jpg" alt="employe1" class=" h-100">
-				<h5>Cristiano Ronaldo</h5>
+				<img src="https://i.pinimg.com/564x/c3/ab/18/c3ab18327516f02afc5a6083392f36fc.jpg" alt="Hugo" class=" w-100">
+				<h5>Mario Artega</h5>
+				<h6>Ingeniero Civil</h6>
 			</div>
 			<div class="swiper-slide bg-white text-center overflow-hidden rounded">
 				<img src="images/about/employee.jpg" alt="employe1" class="w-100">
 				<h5>David Stevan</h5>
+				<h6>Programador Web</h6>
 			</div>
 			<div class="swiper-slide bg-white text-center overflow-hidden rounded">
-				<img src="images/about/chayane.jpg" alt="employe1" class="w-100 h-100">
-				<h5>Chayane</h5>
+				<img src="https://i.pinimg.com/564x/12/ac/60/12ac606896dfc98f4806b7acababed67.jpg" alt="Jose" class="w-100 h-100" height="40px">
+				<h5>Jose Torres</h5>
+				<h6>Cocinero General</h6>
 			</div>
 		</div>
 		<div class="swiper-pagination"></div>

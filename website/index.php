@@ -193,11 +193,9 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 					if (xhr.status === 200) {
 						var reservedDates = JSON.parse(xhr.responseText);
 						markReservedDates(reservedDates);
-						alert('ELIMINAR ESTO2');
-
+					
 					} else {
 						console.error('Hubo un error al cargar las fechas ocupadas.');
-						alert('ELIMINAR ESTO');
 					}
 				}
 			};
@@ -553,11 +551,11 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 				<div class="bg-white p-4 rounded mb-4">
 					<h5>Llamanos</h5>
 					<a href="tel: +503" class="d-inline-block mb-2 text-decoration-none text-dark">
-						<i class="bi bi-telephone-fill"></i> Numero de telefono
+						<i class="bi bi-telephone-fill"></i> 2257-1037
 					</a>
 					<br>
 					<a href="tel: +503" class="d-inline-block text-decoration-none text-dark">
-						<i class="bi bi-telephone-fill"></i> Numero de telefono
+						<i class="bi bi-telephone-fill"></i> 2257-1037
 					</a>
 				</div>
 				<div class="bg-white p-4 rounded mb-4">
@@ -568,19 +566,19 @@ require_once('inc/dbConnection.php'); // Adjust the path if necessary
 				</div>
 				<div class="bg-white p-4 rounded mb-4">
 					<h5>Siguenos</h5>
-					<a href="#" class="d-inline-block mb-3">
+					<a href="https://twitter.com/home" class="d-inline-block mb-3" target="_blank">
 						<span class="badge bg-light text-dark fs-6 p-2">
 							<i class="bi bi-twitter-x me-1"></i> Twitter
 						</span>
 					</a>
 					<br>
-					<a href="#" class="d-inline-block mb-3">
+					<a href="https://www.facebook.com/" class="d-inline-block mb-3" target="_blank">
 						<span class="badge bg-light text-dark fs-6 p-2">
 							<i class="bi bi-facebook me-1"></i> Facebook
 						</span>
 					</a>
 					<br>
-					<a href="#" class="d-inline-block">
+					<a href="https://www.instagram.com/" class="d-inline-block" target="_blank">
 						<span class="badge bg-light text-dark fs-6 p-2">
 							<i class="bi bi-instagram me-1"></i> Instagram
 						</span>
