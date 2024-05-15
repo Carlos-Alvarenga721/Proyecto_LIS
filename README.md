@@ -24,21 +24,26 @@
  *5) LICENCIAS CREATIVE COMMONS*
       
       Proyecto LIS © 2024 por Carlos Alvarenga se distribuye bajo una licencia Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
-      ![image](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/assets/79995182/068221fb-ed26-4ab1-9d47-fcd929ff84a8)
+ ![image](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/assets/79995182/068221fb-ed26-4ab1-9d47-fcd929ff84a8)
  
  *6) LINK DE TRELLO:*
  
-      https://trello.com/b/87jOMR0q/proyecto-catedra-lis
+  https://trello.com/b/87jOMR0q/proyecto-catedra-lis
+
       
  *7) LINK DEL FUNCIONAMIENTO DEL PROYECTO:*
       
  https://www.youtube.com/watch?v=-zhDjfUr784
 
+
  *8) MANUAL DE USUARIO* 
+ 
 [Manual_Usuario_LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316829/Manual_Usuario_LIS.pdf)
         
- *9) CAPTURAS DE LOS MOCK UPS*    
+ *9) CAPTURAS DE LOS MOCK UPS* 
+ 
 [MOCK UPS LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316832/MOCK.UPS.LIS.pdf)
 
 *10) MANUAL TECNICO*
+
 [Manual_Tecnico_LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316833/Manual_Tecnico_LIS.pdf)
