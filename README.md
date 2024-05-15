@@ -24,6 +24,11 @@
  *5) LICENCIAS CREATIVE COMMONS*
       
       Proyecto LIS © 2024 por Carlos Alvarenga se distribuye bajo una licencia Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+      
+      -Licencia del tipo (Reconocimiento - No Comercial - Compartir Igual).
+      
+      -Esta licencia no permite un uso comercial de la obra original ni de las posibles obras derivadas. Además, la distribución de estas obras derivadas se debe hacer con una licencia igual a la que regula la obra original.
+
  ![image](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/assets/79995182/068221fb-ed26-4ab1-9d47-fcd929ff84a8)
  
  *6) LINK DE TRELLO:*
