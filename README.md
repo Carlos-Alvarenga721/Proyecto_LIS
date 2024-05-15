@@ -23,7 +23,7 @@
 
  *5) LICENCIAS CREATIVE COMMONS*
       
-      Proyecto LIS © 2024 por Carlos Alvarenga se distribuye bajo una licencia Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+ Proyecto LIS © 2024 por Carlos Alvarenga se distribuye bajo una licencia Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
  ![image](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/assets/79995182/068221fb-ed26-4ab1-9d47-fcd929ff84a8)
  
  *6) LINK DE TRELLO:*
