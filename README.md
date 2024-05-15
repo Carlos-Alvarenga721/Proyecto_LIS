@@ -32,24 +32,13 @@
       
  *7) LINK DEL FUNCIONAMIENTO DEL PROYECTO:*
       
-      https://www.youtube.com/watch?v=-zhDjfUr784
+ https://www.youtube.com/watch?v=-zhDjfUr784
 
- *8) MANUAL DE USUARIO*
- 
-      x
-      
- *9) MANUAL TECNICO*
-      
-      [Manual_Tecnico_LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316738/Manual_Tecnico_LIS.pdf)
-      [Manual_Tecnico_LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316778/Manual_Tecnico_LIS.pdf)
+ *8) MANUAL DE USUARIO* 
+[Manual_Usuario_LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316829/Manual_Usuario_LIS.pdf)
+        
+ *9) CAPTURAS DE LOS MOCK UPS*    
+[MOCK UPS LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316832/MOCK.UPS.LIS.pdf)
 
-
-
- *10) CAPTURAS DE LOS MOCK UPS*
- 
-      [MOCK UPS LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316650/MOCK.UPS.LIS.pdf)
-
-       
-      
-
- 
+*10) MANUAL TECNICO*
+[Manual_Tecnico_LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316833/Manual_Tecnico_LIS.pdf)
