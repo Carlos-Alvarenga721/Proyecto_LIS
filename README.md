@@ -41,6 +41,8 @@
  *9) MANUAL TECNICO*
       
       [Manual_Tecnico_LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316738/Manual_Tecnico_LIS.pdf)
+      [Manual_Tecnico_LIS.pdf](https://github.com/Carlos-Alvarenga721/Proyecto_LIS/files/15316778/Manual_Tecnico_LIS.pdf)
+
 
 
  *10) CAPTURAS DE LOS MOCK UPS*
